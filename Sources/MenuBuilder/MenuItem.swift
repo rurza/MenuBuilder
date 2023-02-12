@@ -37,19 +37,6 @@ public struct MenuItem: AnyMenuItem {
             item.attributedTitle = NSAttributedString(title)
         }]
     }
-
-    /// Creates a menu item with a submenu containing the provided children.
-    ///
-    /// > Important: This initializer is deprecated.
-    /// > Instead, use ``AnyMenuItem/submenu(_:)`` to specify the submenu after initialization:
-    /// >
-    /// > ```swift
-    /// > MenuItem(title).submenu { ... }
-    /// > ```
-    @available(*, deprecated, message: "Use .submenu(_:) instead")
-    public init(_ title: String, @MenuBuilder children: @escaping () -> [NSMenuItem]) {
-        self = MenuItem(title).submenu(children)
-    }
 }
 
 extension MenuBuilder {
